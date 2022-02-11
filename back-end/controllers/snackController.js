@@ -1,5 +1,5 @@
 const express = require('express');
-// const { getAllSongs, addNewSongs, getSong, deleteSong, updateSong } = require('../queries/song');
+const { getAllSnacks, createNewSnack, getSnack, deleteSnack, updateSnack } = require('../queries/snack');
 const snacks = express.Router();
 
 
@@ -20,7 +20,7 @@ snacks.get("/", async (req, res) => {
   });
 
   snacks.post('/', async (request, response) => {
-    const newSnacks = await addNewSnacks(request.body);
+    const newSnacks = await createNewSnack(request.body);
     response.status(200).json(newSnacks);
 })
 
