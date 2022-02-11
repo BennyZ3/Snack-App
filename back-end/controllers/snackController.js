@@ -29,7 +29,7 @@ snacks.get('/:index', async (request, response) => {
   const snack = await getSnack(index);
   response.status(200).json(snack);
 })
-snack.delete('/:id', async (request, response) => {
+snacks.delete('/:id', async (request, response) => {
 const {id} = request.params;
 const snack = await deleteSnack(id);
 response.status(200).json(snack);    
