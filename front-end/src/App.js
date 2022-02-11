@@ -1,8 +1,8 @@
-// DEPENDENCIES
+// // DEPENDENCIES
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 
-// PAGES
+// // PAGES
 import Details from "./Pages/Details";
 import Edit from "./Pages/Edit";
 import Home from "./Pages/Home";
