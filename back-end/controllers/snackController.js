@@ -1,5 +1,5 @@
 const express = require('express');
-const { getAllSnacks, createNewSnack, getSnack, deleteSnack, updateSnack } = require('../queries/snack');
+const { getAllSnacks, createNewSnack, getSnack, deleteSnack, updateSnack } = require('../queries/snacks');
 const snacks = express.Router();
 
 
