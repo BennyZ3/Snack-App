@@ -41,9 +41,12 @@ const Form = (isEdit = false) => {
         .catch((error) => console.warn(error));
     } else {
       //post request
-      axios.post(`${API}/snacks/`, snack).then(() => {
-        navigate("/");
-      });
+      axios
+        .post(`${API}/snacks/`, snack)
+        .then(() => {
+          navigate("/");
+        })
+        .catch((error) => console.warn(error));
     }
   };
 
