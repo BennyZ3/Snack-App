@@ -1,5 +1,5 @@
 // DEPENDENCIES
-import { BroswerRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Details from "./Pages/Details";
 import Edit from "./Pages/Edit";
 import Home from "./Pages/Home";
