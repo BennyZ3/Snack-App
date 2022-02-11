@@ -1,5 +1,8 @@
-// DEPENDENCIES
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// // DEPENDENCIES
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./Components/NavBar";
+
+// // PAGES
 import Details from "./Pages/Details";
 import Edit from "./Pages/Edit";
 import Home from "./Pages/Home";
@@ -9,9 +12,10 @@ import PageNotFound from "./Pages/PageNotFound";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <NavBar />
         <main>
+          main
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/:id" element={<Details />} />
@@ -20,7 +24,7 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
