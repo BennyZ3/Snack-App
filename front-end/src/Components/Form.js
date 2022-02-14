@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { request } from "express";
 import axios from "axios";
 
 const Form = (isEdit = false) => {
   let navigate = useNavigate();
   const API = process.env.REACT_APP_API_URL;
-  const id = request.params.id ? request.params.id : null;
+  let params = useParams();
+  const id = params.id ? params.id : null;
   const [snack, setSnack] = useState({
     name: "",
     fiber: "",
