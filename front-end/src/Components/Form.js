@@ -96,7 +96,7 @@ const Form = (isEdit = false) => {
         id="is_healthy"
         name="is_healthy"
         type="checkbox"
-        value={snack.is_healthy}
+        checked={snack.is_healthy}
         onChange={handleChange}
         placeholder="is_healthy"
       />
