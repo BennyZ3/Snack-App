@@ -23,7 +23,7 @@ snacks.get("/", async (req, res) => {
 });
 
 snacks.post("/", async (request, response) => {
-  console.log(request.body, "Post request");
+  // console.log(request.body, "Post request");
   const newSnacks = await createSnack(request.body);
   if (newSnacks.id) {
     response.status(200).json({ success: true, payload: newSnacks });
@@ -53,6 +53,7 @@ snacks.delete("/:id", async (request, response) => {
 });
 
 snacks.put("/:id", async (request, response) => {
+  console.log(request.body);
   try {
     const updatedSnack = await updateSnack(request.params.id, request.body);
     response.status(200).json({ success: true, payload: updatedSnack });
