@@ -15,7 +15,6 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <main>
-          main
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/:id" element={<Details />} />
