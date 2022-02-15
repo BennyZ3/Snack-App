@@ -5,9 +5,9 @@ const cors = require('cors');
 const PORT = process.env.PORT || 8080
 
 // CONFIGURATION
+
 const app = express();
 app.use(cors());
-
 
 // MIDDLEWARE
 
