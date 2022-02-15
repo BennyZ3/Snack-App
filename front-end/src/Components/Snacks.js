@@ -16,21 +16,22 @@ function Snacks() {
   return (
     <div className="snacks">
       <section>
-        <table>
-          <thead>
+        {/* <table> */}
+        {/* <thead>
             <tr>
               <th>SNACK</th>
               <th>FIBER</th>
               <th>PROTEIN</th>
               <th>ADDED SUGAR</th>
+              <th>HEALTHY</th>
             </tr>
-          </thead>
-          <tbody>
-            {snacks.map((snack) => {
-              return <Snack key={snack.id} snack={snack} />;
-            })}
-          </tbody>
-        </table>
+          </thead> */}
+        {/* <tbody> */}
+        {snacks.map((snack) => {
+          return <Snack key={snack.id} snack={snack} />;
+        })}
+        {/* </tbody> */}
+        {/* </table> */}
       </section>
     </div>
   );

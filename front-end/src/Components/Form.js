@@ -40,7 +40,7 @@ const Form = (isEdit = false) => {
       axios
         .put(`${API}/snacks/${id}`, snack)
         .then(() => {
-          navigate(`/snacks/${id}`);
+          navigate(`/snacks`);
         })
         .catch((error) => console.warn(error));
     } else {
@@ -58,6 +58,7 @@ const Form = (isEdit = false) => {
     <form onSubmit={handleSubmit}>
       <label for="name">Name:</label>
       <input
+        required
         id="name"
         name="name"
         type="text"
