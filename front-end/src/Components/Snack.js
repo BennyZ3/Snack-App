@@ -9,12 +9,10 @@ function Snack({ snack }) {
           <img src={snack.image} />
         </div>
         <h4>
-          <img
-            src={HeartHealth(snack.is_healthy)}
-            alt={snack.is_healthy ? "healthy food" : "unhealthy food"}
-          />
+          {HeartHealth(snack.is_healthy)}
           {snack.name}
         </h4>
+        {/* <h4>{HeartHealth(snack.is_healthy)}</h4> */}
       </Link>
       {/* <div>{snack.fiber}</div>
       <div>{snack.protein}</div>

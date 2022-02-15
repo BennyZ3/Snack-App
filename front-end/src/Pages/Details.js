@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import HeartHealth from "../Components/HeartHealth";
 
 const Details = () => {
   console.log("details");
@@ -28,16 +29,7 @@ const Details = () => {
   };
   return (
     <article className="details">
-      <aside>
-        <img
-          src={
-            snacks.is_healthy
-              ? "../assets/heart-solid.png"
-              : "../assets/heart-regular.png"
-          }
-          alt={snacks.is_healthy ? "healthy food" : "Not Healthy"}
-        />
-      </aside>
+      <aside>{HeartHealth(snacks.is_healthy)}</aside>
       <h2>Nutritional Facts</h2>
       <div>Protein: {snacks.protein}</div>
       <div>Fiber: {snacks.fiber}</div>

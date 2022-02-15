@@ -14,8 +14,8 @@ function Snacks() {
   }, [API]);
 
   return (
-    <div className="snacks">
-      <section>
+    <section className="Snacks">
+      <article className="Snacks">
         {/* <table> */}
         {/* <thead>
             <tr>
@@ -32,8 +32,8 @@ function Snacks() {
         })}
         {/* </tbody> */}
         {/* </table> */}
-      </section>
-    </div>
+      </article>
+    </section>
   );
 }
 
