@@ -3,7 +3,7 @@ import Form from "../Components/Form";
 const New = () => {
   return (
     <div>
-      <Form />
+      <Form isEdit={false} />
     </div>
   );
 };

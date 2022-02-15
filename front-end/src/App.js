@@ -20,7 +20,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/:id" element={<Details />} />
             <Route path="/new" element={<New />} />
-            <Route path="/edit" element={<Edit />} />
+            <Route path="/:id/edit" element={<Edit />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
