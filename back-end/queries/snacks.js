@@ -19,8 +19,9 @@ const getSnack = async (id) => {
 };
 
 const createSnack = async (snack) => {
-  const { name, fiber, protein, added_sugar, is_healthy, image } = snack;
+  // console.log(snack);
   try {
+    const { name, fiber, protein, added_sugar, is_healthy, image } = snack;
     const newSnack = await db.one(
       "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING * ",
       [name, fiber, protein, added_sugar, is_healthy, image]
@@ -63,5 +64,3 @@ module.exports = {
   deleteSnack,
   updateSnack,
 };
-
-// module.exports = {};
