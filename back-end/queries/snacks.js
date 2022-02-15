@@ -69,7 +69,10 @@ const deleteSnack = async (id) => {
 
 const updateSnack = async (id, snack) => {
   try {
-    const { name, fiber, protein, added_sugar, image } = snack;
+    let { name, fiber, protein, added_sugar, image } = snack;
+    if (!image) {
+      image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
+    }
     name = capitalize(name);
     let is_healthy = confirmHealth(snack);
     const updatedSnack = await db.one(
