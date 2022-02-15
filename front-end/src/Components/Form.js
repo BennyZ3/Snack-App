@@ -18,7 +18,7 @@ const Form = (isEdit = false) => {
   useEffect(() => {
     if (isEdit.isEdit) {
       axios.get(`${API}/snacks/${id}`).then((response) => {
-        setSnack(response.data);
+        setSnack(response.data.payload);
       });
     } else {
       setSnack({ ...snack });
