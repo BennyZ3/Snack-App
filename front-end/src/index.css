@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+body {
+  margin: 10px;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif; */
+  font-family: "Overlock, Cursive";
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  /* color: rgb(64, 62, 70); */
+  color: rgb(235, 94, 40);
+}
+
+form {
+  position: relative;
+  padding: 8%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 10%;
+  border: 2px solid rgb(17, 17, 17);
+  margin: 20px;
+}
+
+table {
+  table-layout: fixed;
+  width: 95%;
+  border-collapse: collapse;
+  border: 2px solid rgb(17, 17, 17);
+  overflow: scroll;
+  margin: 20px;
+}
+
+th,
+td {
+  padding: 20px;
+}
+
+th {
+  background-color: #bdbdbd;
+  border-bottom: 2px solid rgb(70, 70, 70);
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(243, 240, 243);
+}
+
+h1 {
+  font-family: "Carter One, cursive";
+}
+
+main {
+  width: 90px;
+  margin: auto;
+}
+
+nav {
+  background-color: rgb(37, 36, 34);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1em;
+  padding-right: 3em;
+  padding-left: 3em;
+  margin-bottom: 1em;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1em;
+}
+
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+article div {
+  width: 150px;
+  padding: 1em;
+  background-color: rgb(255, 252, 242);
+}
+
+.Snacks img {
+  width: 150px;
+}
