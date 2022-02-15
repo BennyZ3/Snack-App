@@ -1,3 +1,4 @@
+const confirmHealth = require("../confirmHealth.js");
 const db = require("../db/dbConfig.js");
 
 const getAllSnacks = async () => {
@@ -19,6 +20,7 @@ const getSnack = async (id) => {
 };
 
 const capitalize = (words) => {
+  // Capitalize first letter and lowercase rest
   words = words.split(" ");
   let result = [];
   if (words.length > 1) {
@@ -35,12 +37,14 @@ const capitalize = (words) => {
 };
 
 const createSnack = async (snack) => {
+  let { name, fiber, protein, added_sugar, image } = snack;
+  if (!image) {
+    image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
+  }
+  let is_healthy = confirmHealth(snack);
+  console.log(snack, "healthy: ", is_healthy);
   try {
-    let { name, fiber, protein, added_sugar, is_healthy, image } = snack;
     name = capitalize(name);
-    if (!image) {
-      image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
-    }
     const newSnack = await db.one(
       "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING * ",
       [name, fiber, protein, added_sugar, is_healthy, image]
@@ -65,8 +69,9 @@ const deleteSnack = async (id) => {
 
 const updateSnack = async (id, snack) => {
   try {
-    console.log(snack);
-    const { name, fiber, protein, added_sugar, is_healthy, image } = snack;
+    const { name, fiber, protein, added_sugar, image } = snack;
+    name = capitalize(name);
+    let is_healthy = confirmHealth(snack);
     const updatedSnack = await db.one(
       "UPDATE snacks SET name=$2, fiber=$3, protein=$4, added_sugar=$5, is_healthy=$6, image=$7 WHERE id=$1 RETURNING *",
       [id, name, fiber, protein, added_sugar, is_healthy, image]
