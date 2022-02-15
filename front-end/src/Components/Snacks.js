@@ -6,9 +6,8 @@ function Snacks() {
   const API = process.env.REACT_APP_API_URL;
   const [snacks, setSnacks] = useState([]);
 
-  useEffect(() => {
-    console.log(API, snacks);
-    axios
+  useEffect(async () => {
+    await axios
       .get(`${API}/snacks`)
       .then((response) => setSnacks(response.data.payload))
       .catch((error) => console.warn(error));

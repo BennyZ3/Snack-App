@@ -34,20 +34,21 @@ const Form = (isEdit = false) => {
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     if (isEdit.isEdit) {
       //put request function
       axios
         .put(`${API}/snacks/${id}`, snack)
         .then(() => {
-          navigate(`/${id}`);
+          navigate(`/snacks/${id}`);
         })
         .catch((error) => console.warn(error));
     } else {
       //post request
       axios
-        .post(`${API}/snacks/`, snack)
+        .post(`${API}/snacks`, snack)
         .then(() => {
-          navigate("/");
+          navigate("/snacks");
         })
         .catch((error) => console.warn(error));
     }
@@ -64,7 +65,7 @@ const Form = (isEdit = false) => {
         onChange={handleChange}
         placeholder="name"
       />
-      <label for="fiber">Protein:</label>
+      <label for="fiber">Fiber:</label>
       <input
         id="fiber"
         name="fiber"
@@ -109,6 +110,7 @@ const Form = (isEdit = false) => {
         onChange={handleChange}
         placeholder="image"
       />
+      <button handleSubmit={handleSubmit}>Submit</button>
     </form>
   );
 };

@@ -4,7 +4,7 @@ function Snack({ snack }) {
   return (
     <tr>
       <td>
-        <Link to={`/${snack.id}`}>{snack.name}</Link>
+        <Link to={`/snacks/${snack.id}`}>{snack.name}</Link>
       </td>
       <td>{snack.fiber}</td>
       <td>{snack.protein}</td>
