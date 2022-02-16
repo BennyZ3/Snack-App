@@ -63,7 +63,7 @@ nav {
   margin: 10px;
 }
 
-.details {
+/* .details {
   position: relative;
   margin: 0 auto;
   padding: 8%;
@@ -71,4 +71,17 @@ nav {
   grid-gap: 20px;
   border: 2px solid rgb(17, 17, 17);
   margin: 20px;
+} */
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  margin: 15px;
+}
+
+.Snack {
+  min-width: 270px;
+  background-color: wheat;
+  border-radius: 5px;
 }
